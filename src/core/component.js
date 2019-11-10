@@ -1,23 +1,22 @@
 export class Component {
-    constructor(id) {
-        this.$el = document.getElementById(id)
-        this.init()
-    }
+  constructor(id) {
+    this.$el = document.getElementById(id)
+    this.init()
+  }
 
-    init() { }
+  init() {}
 
+  onShow() {}
 
+  onHide() {}
 
-    onShow() { }
+  hide() {
+    this.$el.classList.add('hide')
+    this.onHide()
+  }
 
-    onHide() { }
-
-    show() {
-        this.$el.classList.remove('hide')
-        this.onShow()
-    }
-    hide() {
-        this.$el.classList.add('hide')
-        this.onHide()
-    }
+  show() {
+    this.$el.classList.remove('hide')
+    this.onShow()
+  }
 }
